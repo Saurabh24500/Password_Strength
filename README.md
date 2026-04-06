@@ -52,3 +52,19 @@ Password	Strength
 Pass123	Medium
 P@ssw0rd!2024	Strong
 
+🔒 Best Practices for Strong Passwords
+Use at least 12–15 characters
+Combine uppercase, lowercase, numbers, and symbols
+Avoid common words or patterns
+Do not reuse passwords across sites
+🤝 Contributing
+
+Contributions are welcome!
+
+Fork the repo
+Create your feature branch
+Commit your changes
+Push and create a Pull Request
+📜 License
+
+This project is open-source and available under the MIT License.
