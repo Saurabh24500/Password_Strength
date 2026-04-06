@@ -37,3 +37,18 @@ cd Password_Strength
 python main.py
 
 or open the HTML file in your browser if it's a web-based project.
+
+📂 Project Structure
+Password_Strength/
+│── main.py / index.html
+│── style.css
+│── script.js
+│── README.md
+
+
+📊 Example
+Password	Strength
+12345	Weak
+Pass123	Medium
+P@ssw0rd!2024	Strong
+
