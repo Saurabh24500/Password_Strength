@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Password Strength — Analyzer</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- load zxcvbn BEFORE app.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <h1>Password Strength</h1>
+      <p class="sub">Type your password below — analysis happens locally in your browser.</p>
+    </header>
+
+    <section class="panel">
+      <div class="left">
+        <label class="lbl">Enter password</label>
+        <input id="pwd" type="password" autocomplete="new-password" placeholder="Type a password…" />
+
+        <div class="controls">
+          <button id="toggle" class="btn blue">Show</button>
+          <button id="copy" class="btn ghost">Copy</button>
+          <button id="clear" class="btn ghost">Clear</button>
+        </div>
+
+        <div class="meter-wrap" aria-hidden="true">
+          <div class="meter-bg"><div id="meterbar" class="meter-fill"></div></div>
+        </div>
+
+        <div class="summary">
+          <div class="leftsum">
+            <div class="score" id="scoretext">—</div>
+            <div class="small" id="breachHint"></div>
+          </div>
+          <div class="rightsum small">Entropy: <strong id="entropy">—</strong> bits</div>
+        </div>
+
+        <div class="stat-row">
+          <!-- Matches removed -->
+          <div class="stat">
+            <div class="stat-title">Guesses</div>
+            <div id="guesses">—</div>
+          </div>
+        </div>
+
+        <div id="suggestions" class="suggestions"></div>
+      </div>
+
+      <aside class="right">
+        <h3>Estimated crack time</h3>
+        <p class="small">Estimates for different attacker speeds — indicative only.</p>
+
+        <div id="timesList" class="timeslist"></div>
+
+        <div class="tips">
+          <h4>Tips</h4>
+          <ul>
+            <li>Use 12+ characters or a passphrase.</li>
+            <li>Avoid common words and predictable substitutions.</li>
+            <li>Use a password manager for unique passwords.</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <footer class="foot">
+      <strong>Privacy:</strong> Analysis runs locally. Password never leaves your browser.
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
