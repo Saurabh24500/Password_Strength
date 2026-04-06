@@ -25,3 +25,15 @@ Use of mixed character types (letters, numbers, symbols)
 Avoidance of simple or predictable patterns
 
 Strong passwords typically include a mix of characters and sufficient length, which makes them harder to crack through brute-force or guessing attacks .
+
+🚀 Getting Started
+1. Clone the repository
+git clone https://github.com/Saurabh24500/Password_Strength.git
+cd Password_Strength
+2. Run the project
+
+(Modify depending on your project language — example below)
+
+python main.py
+
+or open the HTML file in your browser if it's a web-based project.
