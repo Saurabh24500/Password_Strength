@@ -247,6 +247,11 @@ body {
   padding-top: 10px;
 }
 
+#copyright {
+  font-size: 10px;
+  text-align: center;
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
