@@ -4,6 +4,7 @@ It is best thing so user can also understand that how my password is strong.
 
 🔐 Password Strength Checker
 Let's Check
+It is cyber security related website project.
 A simple and efficient tool to analyze the strength of a password based on multiple security criteria such as length, character diversity, and complexity.
 
 📌 Features
