@@ -70,3 +70,4 @@ Push and create a Pull Request
 📜 License
 
 This project is open-source and available under the MIT License.
+This is verified and thanks to MIT.
