@@ -1,6 +1,5 @@
 # Password_Strength
 To check password strength and give chances of braking that and needed time for that.
-It is best thing so user can also understand that how my password is strong.
 
 🔐 Password Strength Checker
 Let's Check
