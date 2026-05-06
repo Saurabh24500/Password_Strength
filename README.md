@@ -1,4 +1,4 @@
-🔐 Password Strength Checker
+# 🔐 Password Strength Checker
 
 🚀 A simple yet powerful cybersecurity tool to evaluate password strength based on modern security standards.
 
