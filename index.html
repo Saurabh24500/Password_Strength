@@ -11,15 +11,20 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
 </head>
 <body>
+  <div class="ambient ambient-a" aria-hidden="true"></div>
+  <div class="ambient ambient-b" aria-hidden="true"></div>
+  <div class="ambient ambient-c" aria-hidden="true"></div>
+
   <main class="wrap">
     <header class="top">
+      <div class="eyebrow">3D password intelligence</div>
       <h1>Password Strength</h1>
-      <p class="sub">Type your password below — analysis happens locally in your browser.</p>
+      <p class="sub">A vivid local analyzer with a glassy 3D interface, live crack-time estimates, and a seamless dark/light theme.</p>
     </header>
 
     <section class="panel">
       <div class="left">
-        <label class="lbl">Enter password Check</label>
+        <label class="lbl">Enter your password</label>
         <input id="pwd" type="password" autocomplete="new-password" placeholder="Type a password…" />
 
         <div class="controls">
@@ -73,6 +78,11 @@
       <small id="copyright">ALL Copy Right to Saurabh and Tom</small>
     </footer>
   </main>
+
+  <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme">
+    <span class="theme-toggle__label">Theme</span>
+    <span id="themeState" class="theme-toggle__state">Dark</span>
+  </button>
 
   <script src="app.js"></script>
 </body>

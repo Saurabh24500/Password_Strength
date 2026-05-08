@@ -33,6 +33,32 @@ const breachHint = document.getElementById('breachHint');
 const toggle = document.getElementById('toggle');
 const copyBtn = document.getElementById('copy');
 const clearBtn = document.getElementById('clear');
+const themeToggle = document.getElementById('themeToggle');
+const themeState = document.getElementById('themeState');
+
+const THEME_STORAGE_KEY = 'password-strength-theme';
+
+function applyTheme(theme){
+  const resolvedTheme = theme === 'light' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = resolvedTheme;
+  themeState.textContent = resolvedTheme === 'light' ? 'Light' : 'Dark';
+  themeToggle.setAttribute('aria-label', `Switch to ${resolvedTheme === 'light' ? 'dark' : 'light'} theme`);
+  return resolvedTheme;
+}
+
+function getPreferredTheme(){
+  const savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+  if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme;
+  return window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+}
+
+applyTheme(getPreferredTheme());
+
+themeToggle.addEventListener('click', () => {
+  const nextTheme = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+  localStorage.setItem(THEME_STORAGE_KEY, nextTheme);
+  applyTheme(nextTheme);
+});
 
 toggle.addEventListener('click', () => {
   if (pwd.type === 'password'){ pwd.type='text'; toggle.textContent='Hide'; }
