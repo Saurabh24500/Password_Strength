@@ -1,6 +1,10 @@
 :root {
   --bg: #040816;
   --bg-2: #09142b;
+  --bg-wave-1: rgba(103, 185, 255, 0.38);
+  --bg-wave-2: rgba(98, 240, 179, 0.30);
+  --bg-wave-3: rgba(255, 138, 91, 0.28);
+  --bg-wave-4: rgba(255, 204, 77, 0.24);
   --surface: rgba(10, 16, 29, 0.72);
   --surface-2: rgba(255, 255, 255, 0.05);
   --surface-3: rgba(255, 255, 255, 0.08);
@@ -14,24 +18,38 @@
   --accent-3: #ff8a5b;
   --focus: #8bd4ff;
   --glow: rgba(98, 240, 179, 0.22);
+  --sticker-a: linear-gradient(135deg, rgba(255, 106, 169, 0.92), rgba(255, 150, 86, 0.92));
+  --sticker-b: linear-gradient(135deg, rgba(108, 190, 255, 0.92), rgba(104, 123, 255, 0.92));
+  --sticker-c: linear-gradient(135deg, rgba(98, 240, 179, 0.92), rgba(48, 196, 140, 0.92));
+  --sticker-d: linear-gradient(135deg, rgba(255, 204, 77, 0.92), rgba(255, 138, 91, 0.92));
+  --sticker-e: linear-gradient(135deg, rgba(244, 114, 182, 0.92), rgba(103, 185, 255, 0.92));
 }
 
 :root[data-theme="light"] {
-  --bg: #eef4ff;
-  --bg-2: #d8e7ff;
-  --surface: rgba(255, 255, 255, 0.72);
-  --surface-2: rgba(12, 28, 52, 0.04);
-  --surface-3: rgba(12, 28, 52, 0.07);
-  --text: #102033;
-  --muted: #52657f;
-  --line: rgba(16, 32, 51, 0.12);
-  --shadow: 0 28px 70px rgba(24, 53, 97, 0.18);
-  --shadow-soft: 0 12px 24px rgba(24, 53, 97, 0.12);
-  --accent: #0dbd88;
-  --accent-2: #315efb;
-  --accent-3: #f26d4f;
-  --focus: #315efb;
-  --glow: rgba(49, 94, 251, 0.12);
+  --bg: #fff4e8;
+  --bg-2: #ffe1c4;
+  --bg-wave-1: rgba(255, 153, 102, 0.42);
+  --bg-wave-2: rgba(255, 198, 88, 0.38);
+  --bg-wave-3: rgba(255, 126, 107, 0.34);
+  --bg-wave-4: rgba(255, 220, 147, 0.34);
+  --surface: rgba(255, 250, 245, 0.74);
+  --surface-2: rgba(94, 61, 23, 0.05);
+  --surface-3: rgba(94, 61, 23, 0.08);
+  --text: #2c1f18;
+  --muted: #7f6557;
+  --line: rgba(103, 63, 29, 0.12);
+  --shadow: 0 28px 70px rgba(138, 91, 55, 0.18);
+  --shadow-soft: 0 12px 24px rgba(138, 91, 55, 0.12);
+  --accent: #e66a4e;
+  --accent-2: #c95bff;
+  --accent-3: #f2a23a;
+  --focus: #c95bff;
+  --glow: rgba(201, 91, 255, 0.12);
+  --sticker-a: linear-gradient(135deg, rgba(255, 112, 145, 0.96), rgba(255, 162, 90, 0.96));
+  --sticker-b: linear-gradient(135deg, rgba(89, 145, 255, 0.96), rgba(135, 92, 255, 0.96));
+  --sticker-c: linear-gradient(135deg, rgba(72, 204, 151, 0.96), rgba(21, 174, 141, 0.96));
+  --sticker-d: linear-gradient(135deg, rgba(255, 199, 79, 0.96), rgba(255, 145, 82, 0.96));
+  --sticker-e: linear-gradient(135deg, rgba(244, 114, 182, 0.96), rgba(255, 171, 124, 0.96));
 }
 
 * {
@@ -57,9 +75,9 @@ body {
   color: var(--text);
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(103, 185, 255, 0.24), transparent 35%),
-    radial-gradient(circle at 82% 18%, rgba(98, 240, 179, 0.18), transparent 30%),
-    radial-gradient(circle at bottom right, rgba(255, 138, 91, 0.18), transparent 28%),
+    radial-gradient(circle at top left, color-mix(in srgb, var(--bg-wave-1) 80%, transparent), transparent 32%),
+    radial-gradient(circle at 84% 16%, color-mix(in srgb, var(--bg-wave-2) 78%, transparent), transparent 28%),
+    radial-gradient(circle at bottom right, color-mix(in srgb, var(--bg-wave-3) 78%, transparent), transparent 30%),
     linear-gradient(160deg, var(--bg) 0%, var(--bg-2) 100%);
 }
 
@@ -72,14 +90,42 @@ body::after {
 }
 
 body::before {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: radial-gradient(circle at center, black 42%, transparent 100%);
-  opacity: 0.35;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    radial-gradient(circle at 20% 40%, var(--bg-wave-1), transparent 36%),
+    radial-gradient(circle at 80% 20%, var(--bg-wave-2), transparent 32%),
+    radial-gradient(circle at 50% 82%, var(--bg-wave-3), transparent 36%);
+  background-size: 72px 72px, 72px 72px, 100% 100%, 100% 100%, 100% 100%;
+  background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+  mask-image: radial-gradient(circle at center, black 44%, transparent 100%);
+  opacity: 0.48;
+  animation: waveDrift 18s ease-in-out infinite alternate, wavePan 28s linear infinite;
 }
 
 body::after {
-  background: radial-gradient(circle at center, transparent 35%, rgba(0, 0, 0, 0.12) 100%);
+  background:
+    linear-gradient(120deg, transparent 0 20%, color-mix(in srgb, var(--bg-wave-4) 55%, transparent) 42%, transparent 65%),
+    radial-gradient(circle at center, transparent 34%, rgba(0, 0, 0, 0.12) 100%);
+  opacity: 0.9;
+  animation: shimmer 12s ease-in-out infinite alternate;
+}
+
+.wave-field {
+  position: fixed;
+  inset: -10%;
+  pointer-events: none;
+  opacity: 0.72;
+  background:
+    radial-gradient(circle at 18% 36%, color-mix(in srgb, var(--bg-wave-1) 85%, transparent) 0 10%, transparent 28%),
+    radial-gradient(circle at 56% 18%, color-mix(in srgb, var(--bg-wave-2) 86%, transparent) 0 12%, transparent 34%),
+    radial-gradient(circle at 82% 42%, color-mix(in srgb, var(--bg-wave-3) 82%, transparent) 0 11%, transparent 30%),
+    radial-gradient(circle at 36% 84%, color-mix(in srgb, var(--bg-wave-4) 82%, transparent) 0 10%, transparent 26%),
+    linear-gradient(120deg, transparent 0 24%, color-mix(in srgb, var(--bg-wave-1) 34%, transparent) 34%, transparent 46%, color-mix(in srgb, var(--bg-wave-2) 30%, transparent) 56%, transparent 68%, color-mix(in srgb, var(--bg-wave-3) 28%, transparent) 78%, transparent 100%);
+  background-size: 140% 140%, 140% 140%, 140% 140%, 140% 140%, 220% 220%;
+  filter: blur(24px) saturate(130%);
+  transform: scale(1.05);
+  animation: waveFloat 16s ease-in-out infinite alternate, waveSweep 22s linear infinite;
 }
 
 .ambient {
@@ -96,7 +142,7 @@ body::after {
   height: 260px;
   top: 7%;
   left: 6%;
-  background: radial-gradient(circle, rgba(103, 185, 255, 0.38), rgba(103, 185, 255, 0.02) 70%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--bg-wave-1) 92%, white 8%), transparent 72%);
 }
 
 .ambient-b {
@@ -104,7 +150,7 @@ body::after {
   height: 340px;
   right: 4%;
   top: 18%;
-  background: radial-gradient(circle, rgba(98, 240, 179, 0.26), rgba(98, 240, 179, 0.02) 70%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--bg-wave-2) 90%, white 10%), transparent 72%);
 }
 
 .ambient-c {
@@ -112,7 +158,7 @@ body::after {
   height: 300px;
   left: 18%;
   bottom: 6%;
-  background: radial-gradient(circle, rgba(255, 138, 91, 0.22), rgba(255, 138, 91, 0.02) 70%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--bg-wave-3) 90%, white 10%), transparent 72%);
 }
 
 .wrap {
@@ -159,6 +205,59 @@ body::after {
   box-shadow: var(--shadow-soft);
 }
 
+.sticker-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.sticker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 14px;
+  border-radius: 999px;
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+  transform: rotate(-3deg);
+  animation: stickerFloat 6s ease-in-out infinite;
+}
+
+.sticker:nth-child(2n) {
+  transform: rotate(4deg);
+}
+
+.sticker:nth-child(3n) {
+  transform: rotate(-6deg);
+}
+
+.sticker-a {
+  background: var(--sticker-a);
+}
+
+.sticker-b {
+  background: var(--sticker-b);
+}
+
+.sticker-c {
+  background: var(--sticker-c);
+}
+
+.sticker-d {
+  background: var(--sticker-d);
+}
+
+.sticker-e {
+  background: var(--sticker-e);
+}
+
 .top h1 {
   margin: 14px 0 8px;
   font-size: clamp(2.2rem, 4vw, 4rem);
@@ -169,6 +268,13 @@ body::after {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+:root[data-theme="light"] .top h1 {
+  background: linear-gradient(135deg, #8a2e25, #df6a46 42%, #b84dff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .sub {
@@ -205,6 +311,11 @@ body::after {
   border-radius: 24px;
   padding: 20px;
   transform: rotateX(2deg) rotateY(3deg) translateZ(0);
+}
+
+:root[data-theme="light"] .left,
+:root[data-theme="light"] .right {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.74), rgba(255, 244, 230, 0.44));
 }
 
 .left .lbl {
@@ -448,6 +559,61 @@ body::after {
   }
 }
 
+@keyframes waveDrift {
+  0% {
+    transform: scale(1.05) translate3d(0, 0, 0) rotate(0deg);
+  }
+  100% {
+    transform: scale(1.09) translate3d(0, -18px, 0) rotate(2deg);
+  }
+}
+
+@keyframes wavePan {
+  0% {
+    background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 120px 40px, -80px 50px, 70px -30px, -40px 80px, 160px 0;
+  }
+}
+
+@keyframes waveFloat {
+  0% {
+    transform: scale(1.05) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: scale(1.1) translate3d(0, 14px, 0);
+  }
+}
+
+@keyframes waveSweep {
+  0% {
+    background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+  }
+  100% {
+    background-position: 24% 0, 58% 0, 82% 0, 34% 0, 100% 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-3%) skewX(-8deg);
+  }
+  100% {
+    transform: translateX(3%) skewX(8deg);
+  }
+}
+
+@keyframes stickerFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(2deg);
+  }
+}
+
 @media (max-width: 920px) {
   body {
     padding: 18px;
@@ -478,6 +644,16 @@ body::after {
   .stat-row,
   .time-line {
     flex-direction: column;
+  }
+
+  .sticker-row {
+    gap: 8px;
+  }
+
+  .sticker {
+    font-size: 11px;
+    padding: 0 12px;
+    min-height: 34px;
   }
 
   .theme-toggle {
