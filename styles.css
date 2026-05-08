@@ -18,11 +18,11 @@
   --accent-3: #ff8a5b;
   --focus: #8bd4ff;
   --glow: rgba(98, 240, 179, 0.22);
-  --sticker-a: linear-gradient(135deg, rgba(255, 106, 169, 0.92), rgba(255, 150, 86, 0.92));
-  --sticker-b: linear-gradient(135deg, rgba(108, 190, 255, 0.92), rgba(104, 123, 255, 0.92));
-  --sticker-c: linear-gradient(135deg, rgba(98, 240, 179, 0.92), rgba(48, 196, 140, 0.92));
-  --sticker-d: linear-gradient(135deg, rgba(255, 204, 77, 0.92), rgba(255, 138, 91, 0.92));
-  --sticker-e: linear-gradient(135deg, rgba(244, 114, 182, 0.92), rgba(103, 185, 255, 0.92));
+  --sticker-a: linear-gradient(135deg, rgba(120, 60, 90, 0.86), rgba(140, 75, 85, 0.86));
+  --sticker-b: linear-gradient(135deg, rgba(70, 95, 140, 0.86), rgba(80, 85, 130, 0.86));
+  --sticker-c: linear-gradient(135deg, rgba(70, 130, 110, 0.86), rgba(60, 110, 95, 0.86));
+  --sticker-d: linear-gradient(135deg, rgba(140, 110, 60, 0.86), rgba(130, 85, 75, 0.86));
+  --sticker-e: linear-gradient(135deg, rgba(130, 75, 110, 0.86), rgba(90, 85, 125, 0.86));
 }
 
 :root[data-theme="light"] {
@@ -358,7 +358,7 @@ body::after {
 .btn {
   padding: 10px 15px;
   border-radius: 14px;
-  border: 1px solid transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
   cursor: pointer;
   font-weight: 700;
   letter-spacing: 0.02em;
@@ -367,18 +367,33 @@ body::after {
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.28), 0 12px 20px rgba(0, 0, 0, 0.18);
+  border-color: rgba(255, 255, 255, 0.36);
 }
 
 .btn.blue {
   background: linear-gradient(135deg, var(--accent-2), #1f7fff 45%, var(--accent));
   color: white;
+  box-shadow: 0 0 16px rgba(103, 185, 255, 0.32);
+}
+
+.btn.blue:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.36), 0 0 16px rgba(103, 185, 255, 0.32), 0 12px 20px rgba(0, 0, 0, 0.18);
 }
 
 .btn.ghost {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
   color: var(--text);
-  border-color: var(--line);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+:root[data-theme="light"] .btn {
+  border-color: rgba(94, 61, 23, 0.18);
+}
+
+:root[data-theme="light"] .btn:hover {
+  border-color: rgba(94, 61, 23, 0.3);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12);
 }
 
 .meter-wrap {
