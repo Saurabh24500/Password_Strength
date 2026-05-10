@@ -10,7 +10,7 @@
 
 ---
 
-📌 Overview
+📌 Overview...
 
 This project analyzes passwords and classifies them as Weak, Medium, or Strong using multiple criteria like length, complexity, and character diversity.
 
