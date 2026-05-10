@@ -47,7 +47,7 @@ if (hasUpper && hasLower && hasNumber && hasSymbol && length >= 10)
     return "Strong";
 return "Medium";
 
----
+------
 
 📊 Example Output
 
