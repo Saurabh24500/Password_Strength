@@ -4,9 +4,8 @@
 
 -----
 
-🌐 Live Preview
-
-👉 (Add your deployed link here if available)
+🌐 Live Preview:
+Under deployment...
 
 -------
 
