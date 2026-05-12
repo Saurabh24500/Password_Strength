@@ -2,7 +2,7 @@
 
 🚀 A simple yet powerful cybersecurity tool to evaluate password strength based on modern security standards.
 
----
+-----
 
 🌐 Live Preview
 
