@@ -84,11 +84,11 @@ python main.py
 📂 Project Structure
 
 Password_Strength/
-│── index.html
-│── style.css
-│── script.js
-│── main.py (optional)
-│── README.md
+* │── index.html
+* │── style.css
+* │── script.js
+* │── main.py (optional)
+* │── README.md
 
 ---
 
